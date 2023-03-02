@@ -24,3 +24,8 @@ blocks:
             - cache restore
             - bundle install --path vendor/bundle
             - bundle exec rspec
+promotions:
+  - name: Dockerize
+    pipeline_file: pipeline_2.yml
+    auto_promote:
+      when: branch = 'master' AND result = 'passed'
